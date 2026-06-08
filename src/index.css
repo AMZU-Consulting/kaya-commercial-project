@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Kaya ProjectOS — Enterprise Construction Finance SaaS */
+    --background: 210 20% 97%;
+    --foreground: 215 28% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 12%;
+    /* Indigo accent primary */
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 20% 93%;
+    --secondary-foreground: 215 28% 20%;
+    --muted: 215 18% 94%;
+    --muted-foreground: 215 14% 52%;
+    --accent: 239 84% 97%;
+    --accent-foreground: 239 84% 40%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 239 84% 67%;
+    /* Charts — indigo, green, amber, red, teal */
+    --chart-1: 239 84% 67%;
+    --chart-2: 152 69% 40%;
+    --chart-3: 37 95% 53%;
+    --chart-4: 0 84% 60%;
+    --chart-5: 187 85% 43%;
+    --radius: 0.625rem;
+    /* Sidebar — deep navy */
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 30% 82%;
+    --sidebar-primary: 239 84% 67%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 40% 17%;
+    --sidebar-accent-foreground: 210 40% 95%;
+    --sidebar-border: 220 35% 18%;
+    --sidebar-ring: 239 84% 67%;
+    /* Semantic traffic-light tokens */
+    --status-green: 152 69% 40%;
+    --status-amber: 37 95% 53%;
+    --status-red: 0 84% 60%;
+    --status-green-bg: 152 60% 95%;
+    --status-amber-bg: 37 90% 95%;
+    --status-red-bg: 0 80% 96%;
+  }
+
+  .dark {
+    --background: 222 47% 7%;
+    --foreground: 210 40% 95%;
+    --card: 222 40% 10%;
+    --card-foreground: 210 40% 95%;
+    --popover: 222 40% 10%;
+    --popover-foreground: 210 40% 95%;
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 35% 16%;
+    --secondary-foreground: 210 40% 90%;
+    --muted: 220 35% 16%;
+    --muted-foreground: 215 20% 60%;
+    --accent: 220 35% 16%;
+    --accent-foreground: 239 84% 75%;
+    --destructive: 0 62% 38%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 35% 18%;
+    --input: 220 35% 18%;
+    --ring: 239 84% 67%;
+    --chart-1: 239 84% 67%;
+    --chart-2: 152 69% 50%;
+    --chart-3: 37 95% 58%;
+    --chart-4: 0 84% 65%;
+    --chart-5: 187 85% 50%;
+    --sidebar-background: 222 47% 7%;
+    --sidebar-foreground: 210 30% 75%;
+    --sidebar-primary: 239 84% 67%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 40% 14%;
+    --sidebar-accent-foreground: 210 40% 92%;
+    --sidebar-border: 220 35% 14%;
+    --sidebar-ring: 239 84% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .status-green { color: hsl(var(--status-green)); }
+  .status-amber { color: hsl(var(--status-amber)); }
+  .status-red { color: hsl(var(--status-red)); }
+  .bg-status-green { background-color: hsl(var(--status-green-bg)); }
+  .bg-status-amber { background-color: hsl(var(--status-amber-bg)); }
+  .bg-status-red { background-color: hsl(var(--status-red-bg)); }
+  .border-status-green { border-color: hsl(var(--status-green)); }
+  .border-status-amber { border-color: hsl(var(--status-amber)); }
+  .border-status-red { border-color: hsl(var(--status-red)); }
+  .sidebar-nav-item {
+    @apply flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150;
+    color: hsl(var(--sidebar-foreground));
+  }
+  .sidebar-nav-item:hover {
+    background-color: hsl(var(--sidebar-accent));
+    color: hsl(var(--sidebar-accent-foreground));
+  }
+  .sidebar-nav-item.active {
+    background-color: hsl(var(--sidebar-primary));
+    color: hsl(var(--sidebar-primary-foreground));
+  }
+}
